@@ -1,0 +1,80 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter create myapp
+
+## exception
+
+FileSystemException: FileSystemException: Cannot copy file to 'C:\Users\javed\Desktop\Flutter\myapp\android\app\src\main\res\mipmap-hdpi\ic_launcher.png', path = 'F:\Flutter\packages\flutter_tools\templates\create\android.tmpl\app\src\main\res\mipmap-hdpi\ic_launcher.png' (OS Error: Access is denied.
+, errno = 5)
+
+```
+#0      _File.throwIfError (dart:io/file_impl.dart:647:7)
+#1      _File.copySync (dart:io/file_impl.dart:352:5)
+#2      _LocalFile&LocalFileSystemEntity&ForwardingFile.copySync (package:file/src/forwarding/forwarding_file.dart:29:50)
+#3      Template.render.<anonymous closure> (package:flutter_tools/src/template.dart:167:18)
+#4      __InternalLinkedHashMap&_HashVMBase&MapMixin&_LinkedHashMapMixin.forEach (dart:collection/runtime/libcompact_hash.dart:365:8)
+#5      Template.render (package:flutter_tools/src/template.dart:109:24)
+#6      CreateCommand._renderTemplate (package:flutter_tools/src/commands/create.dart:364:21)
+#7      CreateCommand._generateApp (package:flutter_tools/src/commands/create.dart:305:23)
+<asynchronous suspension>
+#8      CreateCommand.runCommand (package:flutter_tools/src/commands/create.dart:172:37)
+<asynchronous suspension>
+#9      FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:372:18)
+#10     _asyncThenWrapperHelper.<anonymous closure> (dart:async/runtime/libasync_patch.dart:77:64)
+#11     _rootRunUnary (dart:async/zone.dart:1132:38)
+#12     _CustomZone.runUnary (dart:async/zone.dart:1029:19)
+#13     _FutureListener.handleValue (dart:async/future_impl.dart:129:18)
+#14     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:642:45)
+#15     Future._propagateToListeners (dart:async/future_impl.dart:671:32)
+#16     Future._complete (dart:async/future_impl.dart:476:7)
+#17     _SyncCompleter.complete (dart:async/future_impl.dart:51:12)
+#18     _AsyncAwaitCompleter.complete.<anonymous closure> (dart:async/runtime/libasync_patch.dart:33:20)
+#19     _rootRun (dart:async/zone.dart:1124:13)
+#20     _CustomZone.run (dart:async/zone.dart:1021:19)
+#21     _CustomZone.bindCallback.<anonymous closure> (dart:async/zone.dart:947:23)
+#22     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#23     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#24     _runPendingImmediateCallback (dart:isolate/runtime/libisolate_patch.dart:115:13)
+#25     _RawReceivePortImpl._handleMessage (dart:isolate/runtime/libisolate_patch.dart:172:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel beta, v0.8.2, on Microsoft Windows [Version 10.0.17134.285], locale en-US)
+    • Flutter version 0.8.2 at F:\Flutter
+    • Framework revision 5ab9e70727 (11 days ago), 2018-09-07 12:33:05 -0700
+    • Engine revision 58a1894a1c
+    • Dart version 2.1.0-dev.3.1.flutter-760a9690c2
+
+[!] Android toolchain - develop for Android devices (Android SDK 27.0.3)
+    • Android SDK at C:\Users\javed\AppData\Local\Android\sdk
+    • Android NDK location not configured (optional; useful for native profiling support)
+    • Platform android-P, build-tools 27.0.3
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b02)
+    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
+
+[✓] Android Studio (version 3.1)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
+    ✗ Dart plugin not installed; this adds Dart specific functionality.
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b02)
+
+[!] VS Code (version 1.26.1)
+    • VS Code at C:\Users\javed\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension not installed; install from
+      https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+
+[!] VS Code, 64-bit edition (version 1.26.1)
+    • VS Code at C:\Program Files\Microsoft VS Code
+    • Flutter extension not installed; install from
+      https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+
+[!] Connected devices
+    ! No devices available
+
+! Doctor found issues in 4 categories.
+```
